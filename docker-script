@@ -1,0 +1,17 @@
+#!/bin/bash
+
+git clone https://github.com/yousefafc/go-boot
+
+docker build -t go-http-server ~/go-http-server
+docker push yousef/go-http-server
+
+if docker ps | grep go-http-server
+then
+	echo "exists"
+	docker stop go-http-server
+	docker rm go-http-server
+	docker run -d -p 8080:8080 --name go-http-server yousef/go-http-server
+else
+	echo "doesn't exist"
+	docker run -d -p 8080:8080 --name go-http-server yousef/go-http-server
+fi
