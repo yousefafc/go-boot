@@ -1,0 +1,102 @@
+Started by user [8mha:////4LZCkIcz/P511fKZs71EcqebdxyTGy6Y1uluoi5GQldWAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/golang-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+Cloning the remote Git repository
+Cloning repository https://github.com/yousefafc/terraform
+ > git init /var/jenkins_home/jobs/golang-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/yousefafc/terraform
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/yousefafc/terraform +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/yousefafc/terraform # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/yousefafc/terraform # timeout=10
+Fetching upstream changes from https://github.com/yousefafc/terraform
+ > git fetch --tags --progress https://github.com/yousefafc/terraform +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 11441b75a6eee29c0009bf79de54693045ddab06 (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 11441b75a6eee29c0009bf79de54693045ddab06
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master 11441b75a6eee29c0009bf79de54693045ddab06
+Commit message: "dockerfile"
+First time build. Skipping changelog.
+[workspace] $ /bin/bash /tmp/jenkins598976776152448600.sh
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.323 s
+[INFO] Finished at: 2018-11-21T13:42:23+00:00
+[INFO] Final Memory: 6M/54M
+[INFO] ------------------------------------------------------------------------
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/jenkins_home/jobs/golang-server/workspace). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+master
+Error: No such image: golang-server:master
+Sending build context to Docker daemon  21.77MB
+Step 1/5 : FROM golang
+Trying to pull repository docker.io/library/golang ... 
+latest: Pulling from docker.io/library/golang
+54f7e8ac135a: Pulling fs layer
+d6341e30912f: Pulling fs layer
+087a57faf949: Pulling fs layer
+5d71636fb824: Pulling fs layer
+f368dba6a331: Pulling fs layer
+f2e97ec220f9: Pulling fs layer
+e4c39f2ed8c2: Pulling fs layer
+5d71636fb824: Waiting
+f368dba6a331: Waiting
+f2e97ec220f9: Waiting
+e4c39f2ed8c2: Waiting
+087a57faf949: Verifying Checksum
+087a57faf949: Download complete
+d6341e30912f: Verifying Checksum
+d6341e30912f: Download complete
+54f7e8ac135a: Verifying Checksum
+54f7e8ac135a: Download complete
+f368dba6a331: Verifying Checksum
+f368dba6a331: Download complete
+5d71636fb824: Verifying Checksum
+5d71636fb824: Download complete
+e4c39f2ed8c2: Verifying Checksum
+e4c39f2ed8c2: Download complete
+f2e97ec220f9: Verifying Checksum
+f2e97ec220f9: Download complete
+54f7e8ac135a: Pull complete
+d6341e30912f: Pull complete
+087a57faf949: Pull complete
+5d71636fb824: Pull complete
+f368dba6a331: Pull complete
+f2e97ec220f9: Pull complete
+e4c39f2ed8c2: Pull complete
+Digest: sha256:41b92066537ec44eb6b79d67e6cfaa2f1085ceba5bb5257f325e4fd3338888a0
+Status: Downloaded newer image for docker.io/golang:latest
+ ---> df6ac9d1bf64
+Step 2/5 : COPY main /opt/golang-server/main
+ ---> 7a5865985785
+Removing intermediate container 83ff4b76f047
+Step 3/5 : COPY static /opt/golang-server/static
+ ---> b4d8914f8553
+Removing intermediate container f0d424a7b465
+Step 4/5 : WORKDIR /opt/golang-server/
+ ---> 63174f2342d9
+Removing intermediate container ce508d9e7974
+Step 5/5 : ENTRYPOINT /opt/golang-server/main
+ ---> Running in f2e9c5d0dd68
+ ---> 16d3b23428e1
+Removing intermediate container f2e9c5d0dd68
+Successfully built 16d3b23428e1
+26062fb03798f42a79d0af4542d5bb5f78cf9376442eb9230fcad7e7f954a53c
+Error response from daemon: network golang-server-ci_default not found
+2018/11/21 13:42:54 [emerg] 6#6: host not found in upstream "golang-server-master" in /etc/nginx/conf.d/golang-server-master.conf:2
+nginx: [emerg] host not found in upstream "golang-server-master" in /etc/nginx/conf.d/golang-server-master.conf:2
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
