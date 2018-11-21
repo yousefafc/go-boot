@@ -15,7 +15,7 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.Handle("/", http.FileServer(http.Dir("static")))
 	http.HandleFunc("/text", sayHello)
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":9000", nil); err != nil {
 		panic(err)
 	}
 }
