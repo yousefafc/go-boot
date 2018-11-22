@@ -1,7 +1,7 @@
 FROM golang
-COPY main /opt/golang-server/main
-COPY static /opt/golang-server/static
-WORKDIR /opt/golang-server/
-ENTRYPOINT ["/opt/golang-server/main"]
+COPY main /opt/go-boot/main
+COPY static /opt/go-boot/static
+WORKDIR /opt/go-boot/
+ENTRYPOINT ["/opt/go-boot/main"]
 
 
