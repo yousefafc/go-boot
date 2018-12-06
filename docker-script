@@ -2,16 +2,16 @@
 
 git clone https://github.com/yousefafc/go-boot
 
-docker build -t go-http-server ~/go-http-server
-docker push yousef/go-http-server
+docker build .
+docker push yousefafc/golang
 
-if docker ps | grep go-http-server
+if docker ps | grep golang
 then
 	echo "exists"
-	docker stop go-http-server
-	docker rm go-http-server
-	docker run -d -p 8080:8080 --name go-http-server yousef/go-http-server
+	docker stop golang
+	docker rm golang
+	docker run -d -p 8080:8080 --name golang golang
 else
 	echo "doesn't exist"
-	docker run -d -p 8080:8080 --name go-http-server yousef/go-http-server
+	docker run -d -p 8080:8080 --name golang golang
 fi
